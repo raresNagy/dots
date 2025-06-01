@@ -1,0 +1,3 @@
+alias cd="z"
+alias ls="ls --color"
+alias cat="bat"
