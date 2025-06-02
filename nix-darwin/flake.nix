@@ -40,6 +40,7 @@
           pkgs.qbittorrent
           pkgs.oh-my-posh
           pkgs.fzf
+          pkgs.vscode
         ];
 
         homebrew = {

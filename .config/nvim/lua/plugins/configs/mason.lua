@@ -12,5 +12,7 @@ return {
     "rust-analyzer",
     "rustfmt",
     "stylua",
+    "mypy",
+    "ruff",
   },
 }

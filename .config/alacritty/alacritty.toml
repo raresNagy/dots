@@ -19,7 +19,7 @@ style = { shape = "Underline", blinking = "On" }
 vi_mode_style = { shape = "Block", blinking = "Off" }
 
 [scrolling]
-history = 10000
+history = 100000
 
 [mouse]
 hide_when_typing = true

@@ -15,7 +15,7 @@ fi
 
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
-export EDITOR="/opt/homebrew/bin/nvim"
+export EDITOR="nvim"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
