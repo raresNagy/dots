@@ -49,6 +49,7 @@ return {
     "nvimtools/none-ls.nvim",
     dependencies = {
       'nvimtools/none-ls-extras.nvim',
+      'jayp0521/mason-null-ls.nvim'
     },
     opts = function()
       return require("plugins.configs.null-ls")

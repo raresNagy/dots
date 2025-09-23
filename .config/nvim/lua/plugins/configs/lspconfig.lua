@@ -1,4 +1,7 @@
 local lspconfig = require("lspconfig")
+local base = require("nvchad.configs.lspconfig")
+local on_attach = base.on_attach
+local capabilities = base.capabilities
 
 lspconfig.lua_ls.setup({
     settings = {
@@ -11,9 +14,29 @@ lspconfig.lua_ls.setup({
     },
 })
 
-lspconfig.pyright.setup({
-  filetypes = {"python"}
-})
+lspconfig.clangd.setup {
+    on_attach = function(client, bufnr)
+        client.server_capabilities.signatureHelpProvider = false
+        on_attach(client, bufnr)
+    end,
+    capabilities = capabilities,
+    cmd = {
+        "clangd",
+        "--background-index",
+        "--clang-tidy",
+        "--header-insertion=iwyu",
+        "--completion-style=detailed",
+        "--function-arg-placeholders",
+        "--fallback-style=llvm",
+    },
+    init_options = {
+        usePlaceholders = true,
+        completeUnimported = true,
+        clangdFileStatus = true,
+    },
+    filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+}
+
 
 lspconfig.rust_analyzer.setup({
     cargo = {

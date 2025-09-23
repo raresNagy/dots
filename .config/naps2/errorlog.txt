@@ -1,0 +1,27 @@
+2025-06-17 16:16:54.5694 13171 The file '<data>' could not be imported. System.AggregateException: AggregateException_ctor_DefaultMessage (IO_FileNotFound_FileName, /Users/raresnagy/.config/naps2/recovery/qudyt0ij.1on/zyp040wx.wkq.00342.pdf) (IO_FileNotFound_FileName, /Users/raresnagy/.config/naps2/recovery/qudyt0ij.1on/zyp040wx.wkq.00343.pdf)
+ ---> System.IO.FileNotFoundException: IO_FileNotFound_FileName, /Users/raresnagy/.config/naps2/recovery/qudyt0ij.1on/zyp040wx.wkq.00342.pdf
+IO_FileName_Name, /Users/raresnagy/.config/naps2/recovery/qudyt0ij.1on/zyp040wx.wkq.00342.pdf
+   at void Interop.ThrowExceptionForIoErrno(ErrorInfo, string, bool)
+   at SafeFileHandle Microsoft.Win32.SafeHandles.SafeFileHandle.Open(string, FileMode, FileAccess, FileShare, FileOptions, long, UnixFileMode, out long, out UnixFileMode, bool, out bool, Func<ErrorInfo, OpenFlags, string, Exception>)
+   at SafeFileHandle Microsoft.Win32.SafeHandles.SafeFileHandle.OpenReadOnly(string, FileOptions, out long, out UnixFileMode)
+   at void System.IO.FileSystem.CopyFile(string, string, bool)
+   at void System.IO.File.Copy(string, string, bool) x 2
+   at ProcessedImage NAPS2.Serialization.ImageSerializer.Deserialize(ScanningContext scanningContext, SerializedImage serializedImage, DeserializeImageOptions options)
+   at bool NAPS2.ImportExport.DirectImportOperation.Start(ImageTransferData data, bool copy, Action<ProcessedImage> imageCallback, DirectImportParams importParams)+(SerializedImage serializedImage) => { }
+   at void System.Threading.Tasks.Dataflow.TransformBlock<TInput, TOutput>.ProcessMessage(Func<TInput, TOutput>, KeyValuePair<TInput, long>)
+   at System.Threading.Tasks.Dataflow.TransformBlock<TInput, TOutput>(Func<TInput, TOutput>, Func<TInput, Task<TOutput>>, ExecutionDataflowBlockOptions)+(KeyValuePair<TInput, long> messageWithId) => { }
+   at void System.Threading.Tasks.Dataflow.Internal.TargetCore<TInput>.ProcessMessagesLoopCore()
+   Exception_EndOfInnerExceptionStack
+ ---> AggregateException_InnerExceptionSystem.IO.FileNotFoundException: IO_FileNotFound_FileName, /Users/raresnagy/.config/naps2/recovery/qudyt0ij.1on/zyp040wx.wkq.00343.pdf
+IO_FileName_Name, /Users/raresnagy/.config/naps2/recovery/qudyt0ij.1on/zyp040wx.wkq.00343.pdf
+   at void Interop.ThrowExceptionForIoErrno(ErrorInfo, string, bool)
+   at SafeFileHandle Microsoft.Win32.SafeHandles.SafeFileHandle.Open(string, FileMode, FileAccess, FileShare, FileOptions, long, UnixFileMode, out long, out UnixFileMode, bool, out bool, Func<ErrorInfo, OpenFlags, string, Exception>)
+   at SafeFileHandle Microsoft.Win32.SafeHandles.SafeFileHandle.OpenReadOnly(string, FileOptions, out long, out UnixFileMode)
+   at void System.IO.FileSystem.CopyFile(string, string, bool)
+   at void System.IO.File.Copy(string, string, bool) x 2
+   at ProcessedImage NAPS2.Serialization.ImageSerializer.Deserialize(ScanningContext scanningContext, SerializedImage serializedImage, DeserializeImageOptions options)
+   at bool NAPS2.ImportExport.DirectImportOperation.Start(ImageTransferData data, bool copy, Action<ProcessedImage> imageCallback, DirectImportParams importParams)+(SerializedImage serializedImage) => { }
+   at void System.Threading.Tasks.Dataflow.TransformBlock<TInput, TOutput>.ProcessMessage(Func<TInput, TOutput>, KeyValuePair<TInput, long>)
+   at System.Threading.Tasks.Dataflow.TransformBlock<TInput, TOutput>(Func<TInput, TOutput>, Func<TInput, Task<TOutput>>, ExecutionDataflowBlockOptions)+(KeyValuePair<TInput, long> messageWithId) => { }
+   at void System.Threading.Tasks.Dataflow.Internal.TargetCore<TInput>.ProcessMessagesLoopCore()<---
+
