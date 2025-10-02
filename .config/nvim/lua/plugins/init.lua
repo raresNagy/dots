@@ -13,6 +13,11 @@ return {
     end,
   },
 
+  {
+    "christoomey/vim-tmux-navigator",
+    opts = false;
+  },
+
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
