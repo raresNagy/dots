@@ -6,7 +6,7 @@ return {
     "neovim/nvim-lspconfig",
     event = "VeryLazy",
     config = function()
-      require("plugins.configs.lspconfig")
+      require "plugins.configs.lspconfig"
     end,
   },
 
@@ -14,7 +14,7 @@ return {
     "williamboman/mason.nvim",
     cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
     opts = function()
-      return require("plugins.configs.mason")
+      return require "plugins.configs.mason"
     end,
     config = function(_, opts)
       require("mason").setup(opts)
@@ -38,7 +38,7 @@ return {
       "apple/pkl-neovim",
     },
     opts = function()
-      return require("plugins.configs.treesitter")
+      return require "plugins.configs.treesitter"
     end,
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
@@ -48,11 +48,11 @@ return {
   {
     "nvimtools/none-ls.nvim",
     dependencies = {
-      'nvimtools/none-ls-extras.nvim',
-      'jayp0521/mason-null-ls.nvim'
+      "nvimtools/none-ls-extras.nvim",
+      "jayp0521/mason-null-ls.nvim",
     },
     opts = function()
-      return require("plugins.configs.null-ls")
+      return require "plugins.configs.null-ls"
     end,
-  }
+  },
 }
