@@ -7,21 +7,21 @@ local M = {}
 M.plugins = "plugins"
 
 M.base46 = {
-	theme = "gruvbox",
-	theme_toggle = {"gruvbox", "gruvbox_light"},
-	transperancy = true,
-	-- hl_override = {
-	-- 	Comment = { italic = true },
-	-- 	["@comment"] = { italic = true },
-	-- },
+  theme = "everforest",
+  theme_toggle = { "everforest", "everforest_light" },
+  transperancy = true,
+  -- hl_override = {
+  -- 	Comment = { italic = true },
+  -- 	["@comment"] = { italic = true },
+  -- },
 }
 
 M.nvdash = { load_on_startup = true }
 M.ui = {
-   tabufline = {
-	 enabled = true,
-         lazyload = true,
-     }
+  tabufline = {
+    enabled = true,
+    lazyload = true,
+  },
 }
 
 return M
