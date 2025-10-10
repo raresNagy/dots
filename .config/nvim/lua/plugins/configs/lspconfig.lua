@@ -1,4 +1,4 @@
-local lspconfig = require "lspconfig"
+local lspconfig = require('lspconfig')
 local base = require "nvchad.configs.lspconfig"
 local on_attach = base.on_attach
 local capabilities = base.capabilities
@@ -54,7 +54,7 @@ lspconfig.templ.setup {
 lspconfig.html.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = { "html", "templ" },
+  filetypes = { "html", "templ", "css", "js" },
 }
 
 lspconfig.htmx.setup {
@@ -62,3 +62,12 @@ lspconfig.htmx.setup {
   capabilities = capabilities,
   filetypes = { "html", "templ" },
 }
+
+-- CSS language server for autocomplete in CSS files
+if lspconfig.cssls then
+  lspconfig.cssls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "css", "scss", "less" },
+  }
+end

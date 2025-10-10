@@ -6,6 +6,7 @@ return {
     "rust",
     "python",
     "html",
+    "css",
     -- twig is sometimes useful for template-like syntax; add as optional
     "twig",
   },

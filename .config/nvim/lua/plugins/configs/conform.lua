@@ -5,7 +5,7 @@ require("conform").setup {
     go = { "gofmt" },
     python = { "ruff", "black" },
     html = { "prettier" },
-    templ = { "templ fmt" },
+    templ = { "templ fm/t" },
   },
   format_on_save = function(bufnr)
     -- Disable autoformat on certain filetypes

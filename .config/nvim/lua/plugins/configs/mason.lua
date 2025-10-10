@@ -16,5 +16,8 @@ return {
     "shfmt",
     "htmx-lsp",
     "prettier",
+    "css-lsp",
+    -- HTML language server (vscode-html-language-server via mason)
+    "html-lsp",
   },
 }
