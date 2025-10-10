@@ -4,6 +4,8 @@ require("conform").setup {
     lua = { "stylua" },
     go = { "gofmt" },
     python = { "ruff", "black" },
+    html = { "prettier" },
+    templ = { "templ fmt" },
   },
   format_on_save = function(bufnr)
     -- Disable autoformat on certain filetypes

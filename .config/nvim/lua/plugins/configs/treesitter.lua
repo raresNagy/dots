@@ -5,6 +5,9 @@ return {
     "lua",
     "rust",
     "python",
+    "html",
+    -- twig is sometimes useful for template-like syntax; add as optional
+    "twig",
   },
   highlight = {
     enable = true,

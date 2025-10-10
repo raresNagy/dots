@@ -17,15 +17,19 @@ return {
       return require "plugins.configs.mason"
     end,
     config = function(_, opts)
-      require("mason").setup(opts)
+      -- opts may be a function result; ensure it is resolved
+      local cfg = opts or require "plugins.configs.mason"
+      require("mason").setup(cfg)
 
       vim.api.nvim_create_user_command("MasonInstallAll", function()
-        if opts.ensure_installed then
-          vim.cmd("MasonInstall " .. table.concat(opts.ensure_installed, " "))
+        local runtime_cfg = require "plugins.configs.mason"
+        if runtime_cfg and runtime_cfg.ensure_installed then
+          vim.cmd("MasonInstall " .. table.concat(runtime_cfg.ensure_installed, " "))
         end
       end, {})
 
-      vim.g.mason_binaries_list = opts.ensure_installed
+      -- set a global list for other plugins to reference
+      vim.g.mason_binaries_list = (cfg and cfg.ensure_installed) or {}
     end,
   },
 
@@ -41,7 +45,20 @@ return {
       return require "plugins.configs.treesitter"
     end,
     config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
+      -- resolve opts at runtime in case it's a function or not yet loaded
+      local cfg = opts or require "plugins.configs.treesitter"
+      require("nvim-treesitter.configs").setup(cfg)
+
+      -- create a helper command to install all configured parsers
+      vim.api.nvim_create_user_command("TSInstallAll", function()
+        local runtime_cfg = require "plugins.configs.treesitter"
+        if runtime_cfg and runtime_cfg.ensure_installed then
+          vim.cmd("TSInstall " .. table.concat(runtime_cfg.ensure_installed, " "))
+        end
+      end, {})
+
+      -- expose the list for other plugins/scripts
+      vim.g.treesitter_parsers_list = (cfg and cfg.ensure_installed) or {}
     end,
   },
 

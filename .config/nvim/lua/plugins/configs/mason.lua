@@ -14,5 +14,7 @@ return {
     "stylua",
     "ruff",
     "shfmt",
+    "htmx-lsp",
+    "prettier",
   },
 }
