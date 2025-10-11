@@ -6,6 +6,7 @@ require("conform").setup {
     python = { "ruff", "black" },
     html = { "prettier" },
     templ = { "templ fm/t" },
+    css = { "prettier" },
   },
   format_on_save = function(bufnr)
     -- Disable autoformat on certain filetypes
