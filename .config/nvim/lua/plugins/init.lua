@@ -34,6 +34,7 @@ return {
         "css",
         "python",
         "cpp",
+        "c_sharp",
         "c",
       },
     },

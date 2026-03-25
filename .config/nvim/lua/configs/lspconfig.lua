@@ -1,5 +1,4 @@
--- Use native Neovim 0.11+ LSP configuration. Avoid calling NvChad helper
--- that relies on the deprecated lspconfig "framework".
+require("nvchad.configs.lspconfig").defaults()
 
 local servers = { "html", "cssls", "pyright", "templ" }
 vim.lsp.enable(servers)

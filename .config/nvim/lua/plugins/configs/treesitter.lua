@@ -9,6 +9,7 @@ return {
     "css",
     -- twig is sometimes useful for template-like syntax; add as optional
     "twig",
+    "c_sharp",
   },
   highlight = {
     enable = true,

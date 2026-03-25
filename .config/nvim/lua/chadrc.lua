@@ -7,8 +7,8 @@ local M = {}
 M.plugins = "plugins"
 
 M.base46 = {
-  theme = "everforest",
-  theme_toggle = { "everforest", "everforest_light" },
+  theme = "gatekeeper",
+  theme_toggle = { "gatekeeper", "everforest_light" },
   transperancy = true,
   -- hl_override = {
   -- 	Comment = { italic = true },

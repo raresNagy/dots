@@ -1,4 +1,8 @@
 return {
+  registries = {
+    "github:mason-org/mason-registry",
+    "github:Crashdummyy/mason-registry", -- provides roslyn, rzls, netcoredbg
+  },
   ensure_installed = {
     "black",
     "clangd",
@@ -19,5 +23,9 @@ return {
     "css-lsp",
     -- HTML language server (vscode-html-language-server via mason)
     "html-lsp",
+    -- ESLint (use eslint_d for faster performance if available)
+    "eslint_d",
+    "roslyn",
+    "csharpier",
   },
 }
