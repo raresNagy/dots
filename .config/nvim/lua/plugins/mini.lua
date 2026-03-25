@@ -13,12 +13,12 @@ return {
 	require("mini.indentscope").setup({
 	    draw = {
 		delay = 10,
-		animation = function(s, n)
-		    return 10
+		animation = function()
+		    return 20
 		end
-	    }	
+	    }
 	}
-	)
-    end
+    )
+end
 }
 
