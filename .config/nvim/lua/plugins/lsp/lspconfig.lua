@@ -13,5 +13,5 @@ return {
     vim.lsp.enable("lua_ls"),
 
     --C++
-    vim.lsp.enable("clangd")
+    vim.lsp.enable("clangd"),
 }
