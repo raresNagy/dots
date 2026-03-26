@@ -4,11 +4,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
--- Add trailing whitespace function
+vim.api.nvim_create_autocmd("InsertEnter", {
+    callback=function()
+    vim.opt.relativenumber = false
+    end
+})
 
 vim.api.nvim_create_autocmd("InsertLeave", {
     callback=function()
     vim.opt.relativenumber = true
-    --trim_trailing_whitespaces()
     end
 })
