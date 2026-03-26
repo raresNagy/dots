@@ -7,17 +7,6 @@ return {
 			extension = { cshtml = "razor" },
 		})
 	end,
-	config = function()
-		vim.api.nvim_create_autocmd("LspAttach", {
-			pattern = "*.cshtml",
-			callback = function(event)
-				local client = vim.lsp.get_client_by_id(event.data.client_id)
-				if client and client.server_capabilities.semanticTokensProvider then
-					vim.lsp.semantic_tokens.start(event.buf, event.data.client_id)
-				end
-			end,
-		})
-	end,
 
 	---@module 'roslyn.config'
 	---@type RoslynNvimConfig
@@ -37,4 +26,16 @@ return {
 			["csharp|implement_type|insertion_behavior"] = "atTheEnd",
 		},
 	},
+
+	config = function()
+		vim.api.nvim_create_autocmd("LspAttach", {
+			pattern = "*.cshtml",
+			callback = function(event)
+				local client = vim.lsp.get_client_by_id(event.data.client_id)
+				if client and client.server_capabilities.semanticTokensProvider then
+					vim.lsp.semantic_tokens.start(event.buf, event.data.client_id)
+				end
+			end,
+		})
+	end,
 }
