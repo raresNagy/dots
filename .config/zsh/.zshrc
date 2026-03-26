@@ -97,6 +97,7 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
+## air for docker
 . "$HOME/.local/bin/env"
 
 export NVM_DIR="$HOME/.nvm"
@@ -105,3 +106,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # bun completions
 [ -s "/Users/raresnagy/.bun/_bun" ] && source "/Users/raresnagy/.bun/_bun"
+
+#cargo
+export PATH="$HOME/.cargo/bin:$PATH"
