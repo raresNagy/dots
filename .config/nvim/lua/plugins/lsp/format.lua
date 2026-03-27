@@ -35,6 +35,7 @@ return {
 			cpp = { "clang_format" },
 			c_sharp = { "csharpier" },
 			lua = { "stylua" },
+			go = {"goimports", "golines", "gofmt"},
 			python = { "isort", "black" },
 			javascript = { "prettierd", "prettier", stop_after_first = true },
 		},

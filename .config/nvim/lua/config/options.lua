@@ -11,7 +11,6 @@ vim.opt.smartindent = true
 vim.opt.autoindent = true
 
 vim.opt.relativenumber = true
-vim.opt.smartindent = true
 
 vim.opt.clipboard:append("unnamedplus")
 

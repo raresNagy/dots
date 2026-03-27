@@ -68,12 +68,26 @@ return {
 			-- C/C++
 			clangd = {},
 
+			html = {},
+
 			-- Python
 			pyright = {},
 
 			--docker
 			dockerls = {},
 			yamlls = {},
+
+			-- Go
+			gopls = {
+				settings = {
+					gopls = {
+						analyses = {
+							unusedparams = true,
+						}
+					},
+					staticcheck = true,
+				}
+			},
 
 			-- C#
 			roslyn = {
@@ -85,7 +99,7 @@ return {
 				filetypes = { "cs", "razor" },
 				settings = {
 					["csharp|background_analysis"] = {
-						dotnet_analyzer_diagnostics_scope = "none", -- drastic improvement, timouts seem to go away
+						dotnet_analyzer_diagnostics_scope = "openFiles", -- drastic improvement, timouts seem to go away
 						dotnet_compiler_diagnostics_scope = "openFiles",
 					},
 				},
