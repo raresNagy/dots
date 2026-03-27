@@ -3,41 +3,34 @@ return {
 	lazy = false,
 	build = ":TSUpdate",
 
-	config = function()
-		local configs = require("nvim-treesitter.configs")
-
-		configs.setup({
-			ensure_installed = {
-				"lua",
-				"c",
-				"vim",
-				"c_sharp",
-				"razor",
-				"html",
-				"css",
-				"javascript",
-				"python",
+	opts = {
+		ensure_installed = {
+			"lua",
+			"c",
+			"vim",
+			"c_sharp",
+			"razor",
+			"html",
+			"css",
+			"javascript",
+			"python",
+		},
+		highlight = { enable = true },
+		auto_install = false,
+	},
+	init = function()
+		vim.filetype.add({
+			extension = {
+				razor = "razor",
+				cshtml = "razor",
 			},
-			highlight = { enable = true },
-			auto_install = false,
+		})
+		vim.treesitter.language.register("razor", "razor")
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = "razor",
+			callback = function()
+				vim.treesitter.start()
+			end,
 		})
 	end,
-	{
-		"nvim-treesitter/nvim-treesitter-textobjects",
-		branch = "main",
-		init = function()
-			-- Disable entire built-in ftplugin mappings to avoid conflicts.
-			-- See https://github.com/neovim/neovim/tree/master/runtime/ftplugin for built-in ftplugins.
-			vim.g.no_plugin_maps = true
-
-			-- Or, disable per filetype (add as you like)
-			-- vim.g.no_python_maps = true
-			-- vim.g.no_ruby_maps = true
-			-- vim.g.no_rust_maps = true
-			-- vim.g.no_go_maps = true
-		end,
-		--config = function()
-		-- put your config here
-		--end,
-	},
 }
