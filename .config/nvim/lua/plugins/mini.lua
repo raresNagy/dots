@@ -9,6 +9,7 @@ return {
 	require("mini.cmdline").setup()
 	require("mini.icons").setup()
 	require("mini.tabline").setup()
+	require("mini.comment").setup()
 	require("mini.indentscope").setup({
 	    draw = {
 		delay = 10,
