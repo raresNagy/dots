@@ -25,7 +25,11 @@ return {
 			---@type RoslynNvimConfig
 			ft = { "cs", "razor" },
 		},
-
+		{
+			"mrcjkb/rustaceanvim",
+			version = "^8", -- Recommended
+			lazy = false, -- This plugin is already lazy
+		},
 		-- Useful status updates for LSP.
 		{ "j-hui/fidget.nvim", opts = {} },
 		{
@@ -68,27 +72,6 @@ return {
 			-- C/C++
 			clangd = {},
 
-			html = {},
-
-			-- Python
-			pyright = {},
-
-			--docker
-			dockerls = {},
-			yamlls = {},
-
-			-- Go
-			gopls = {
-				settings = {
-					gopls = {
-						analyses = {
-							unusedparams = true,
-						}
-					},
-					staticcheck = true,
-				}
-			},
-
 			-- C#
 			roslyn = {
 				vim.filetype.add({
@@ -104,6 +87,51 @@ return {
 					},
 				},
 			},
+			-- HTML/Emmet
+			html = {},
+			emmet_language_server = {
+				filetypes = {
+					"astro",
+					"razor",
+					"css",
+					"eruby",
+					"html",
+					"htmlangular",
+					"htmldjango",
+					"javascriptreact",
+					"less",
+					"sass",
+					"scss",
+					"svelte",
+					"typescriptreact",
+					"vue",
+				},
+			},
+			cssls = {},
+
+			-- Python
+			pyright = {},
+
+			--docker
+			dockerls = {},
+			yamlls = {},
+
+			-- Go
+			gopls = {
+				settings = {
+					gopls = {
+						analyses = {
+							unusedparams = true,
+						},
+					},
+					staticcheck = true,
+				},
+			},
+
+			-- rust
+			--
+			rust_analyzer = {},
+
 			-- Lua
 			stylua = {},
 			lua_ls = {
@@ -137,7 +165,9 @@ return {
 
 		local ensure_installed = vim.tbl_keys(servers or {})
 		vim.list_extend(ensure_installed, {
+			"emmet-language-server",
 			"black",
+			"rustfmt",
 			"stylua",
 			"isort",
 			"csharpier",
