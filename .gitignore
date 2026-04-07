@@ -1,1 +1,3 @@
 ./.config/qBittorrent/qBittorrent-data.ini
+.DS_Store
+./.config/qBittorrent/*

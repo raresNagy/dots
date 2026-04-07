@@ -5,7 +5,6 @@ return {
 	require("mini.pairs").setup()
 	require("mini.splitjoin").setup()
 	require("mini.surround").setup()
-	require("mini.git").setup()
 	require("mini.cmdline").setup()
 	require("mini.icons").setup()
 	require("mini.tabline").setup()
