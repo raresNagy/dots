@@ -1,16 +1,16 @@
 # vim:fileencoding=utf-8:foldmethod=marker
-include everforest.conf
+
+include themes/moonfly.conf
 
 #: Fonts {{{
 
 #: kitty has very powerful font management. You can configure
 #: individual font faces and even specify special fonts for particular
 #: characters.
-
-font_family     JetBrainsMono NF
-bold_font        auto
-italic_font      auto
-bold_italic_font auto
+# font_family     JetBrainsMono NF
+# bold_font        auto
+# italic_font      auto
+# bold_italic_font auto
 
 #: You can specify different fonts for the bold/italic/bold-italic
 #: variants. The easiest way to select fonts is to run the `kitten
@@ -21,7 +21,7 @@ bold_italic_font auto
 #: <https://sw.kovidgoyal.net/kitty/kittens/choose-fonts/#font-spec-
 #: syntax>.
 
-# font_size 9.0
+font_size 12
 
 #: Font size (in pts).
 
@@ -502,7 +502,7 @@ bold_italic_font auto
 #: If you would rather use neovim to view the scrollback, use
 #: something like this::
 
-#:     scrollback_pager nvim --cmd 'set eventignore=FileType' +'nnoremap q ZQ' +'call nvim_open_term(0, {})' +'set nomodified nolist' +'$' -
+scrollback_pager nvim --cmd 'set eventignore=FileType' +'nnoremap q ZQ' +'call nvim_open_term(0, {})' +'set nomodified nolist' +'$' -
 
 #: The above works for neovim 0.12 and newer. There is also a
 #: dedicated plugin kitty-scrollback.nvim
@@ -1684,7 +1684,7 @@ bold_italic_font auto
 #: interactive mode and reads its startup rc files. Environment
 #: variables are expanded in this setting.
 
-# editor .
+editor nvim
 
 #: The terminal based text editor (such as vim or nano) to use when
 #: editing the kitty config file or similar tasks.
@@ -2991,3 +2991,11 @@ bold_italic_font auto
 #: }}}
 
 #: }}}
+
+
+# BEGIN_KITTY_FONTS
+font_family      family="JetBrainsMono Nerd Font Mono"
+bold_font        family='JetBrainsMono Nerd Font Mono' style=Bold
+italic_font      auto
+bold_italic_font family='JetBrainsMono Nerd Font Mono' style='Bold Italic'
+# END_KITTY_FONTS
