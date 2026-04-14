@@ -1,0 +1,31 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 0,
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "spacing": 0,
+    "modules-center": ["custom/clock"],
+    "modules-right": ["battery", "tray"],
+
+
+    "custom/clock": {
+        "format": "<span color='#252525'>[ </span>{text}<span color='#252525'> ]</span>",
+        "exec": "date +'%H:%M %A, %b %d' | awk '{print tolower($0)}'",
+        "interval": 3
+    },
+
+    "battery": {
+        "format": "<span color='#252525'> / </span><span color='#afa193'><b>bat:</b></span> {capacity}%",
+        "format-charging": "<span color='#252525'> / </span><span color='#afa193'><b>ac:</b></span> {capacity}%",
+        "tooltip": false,
+        "interval": 20
+    },
+
+    "tray": {
+        "icon-size": 20,
+        "spacing": 7,
+        "tooltip": false
+    }
+}

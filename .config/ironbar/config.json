@@ -1,0 +1,6 @@
+{
+  "position": "top",
+  "modules-left": ["workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["tray"]
+}

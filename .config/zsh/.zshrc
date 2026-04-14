@@ -19,6 +19,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 export PATH="/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Set zinit dir
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -73,6 +74,12 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
+# Colorscheme based on wallpaper
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+(cat ~/.cache/wal/sequences &)
+
 # Aliases
 alias ls='ls --color'
 alias vim='nvim'
@@ -116,3 +123,6 @@ zinit light-mode for \
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+# opencode
+export PATH=/home/raresnagy/.opencode/bin:$PATH
