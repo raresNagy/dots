@@ -6,8 +6,13 @@
     "margin-top": 0,
     "margin-bottom": 0,
     "spacing": 0,
+    "modules-left":["sway/workspaces"],
     "modules-center": ["custom/clock"],
     "modules-right": ["battery", "tray"],
+
+    "workspaces": {
+        "all-outputs":false
+    },
 
 
     "custom/clock": {
