@@ -1,3 +1,22 @@
+@import url('file:///home/raresnagy/.cache/wal/colors-waybar.css');
+
 * {
     font-family: "NotoSans Nerd Font", "Noto Sans Nerd Font", sans-serif;
+    color: @foreground;
 }
+
+window#waybar {
+    background-color: @background;
+    border: none;
+}
+
+#workspaces button.focused {
+    background-color: @foreground;
+}
+
+#workspaces button.focused,
+#workspaces button.focused *
+{
+    color: @background;
+}
+

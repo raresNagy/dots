@@ -82,6 +82,9 @@ bindsym $mod+Shift+p exec swaylock -f -c 000000
     # Start your launcher
     bindsym $mod+d exec $menu
 
+    # Screenshot
+    bindsym $mod+Shift+s exec grim -g "$(slurp)" | wl-copy
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -185,8 +188,17 @@ bindsym $mod+Shift+p exec swaylock -f -c 000000
 
 #
 # Borders
-#
 default_border pixel
+#hide_edge_borders --i3 horizontal
+
+#
+# Gaps
+#
+
+smart_gaps off
+gaps inner 10
+gaps outer 10
+
 #
 # Resizing containers:
 #
@@ -228,7 +240,10 @@ bindsym $mod+r mode "resize"
 #
 # Status Bar:
 #
-exec waybar
+
+bar {
+        swaybar_command waybar
+}
 # Read `man 5 sway-bar` for more information about this section.
 
 include /etc/sway/config.d/*

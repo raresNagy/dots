@@ -1,2 +1,3 @@
-2026/04/14-09:41:41.071 17ed Creating DB /home/raresnagy/.config/vesktop/sessionData/Session Storage since it was missing.
-2026/04/14-09:41:41.072 17ed Reusing MANIFEST /home/raresnagy/.config/vesktop/sessionData/Session Storage/MANIFEST-000001
+2026/04/14-21:11:11.621 24608 Reusing MANIFEST /home/raresnagy/.config/vesktop/sessionData/Session Storage/MANIFEST-000001
+2026/04/14-21:11:11.621 24608 Recovering log #3
+2026/04/14-21:11:11.621 24608 Reusing old log /home/raresnagy/.config/vesktop/sessionData/Session Storage/000003.log 

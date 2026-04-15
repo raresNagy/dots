@@ -7,24 +7,53 @@
     "margin-bottom": 0,
     "spacing": 0,
     "modules-left":["sway/workspaces"],
-    "modules-center": ["custom/clock"],
-    "modules-right": ["battery", "tray"],
+    "modules-center": ["image#album-art","custom/clock"],
+    "modules-right": ["network","wireplumber", "backlight#kbd", "battery", "tray"],
 
-    "workspaces": {
-        "all-outputs":false
+    
+    "backlight#kbd": {
+        "device": "kbd_backlight",
+        "format": "<span color='#252525'> / </span><span color='#afa193'><b>kbd:</b></span> {percent}%",
+        "on-scroll-up": "brightnessctl --device='kbd_backlight' set +5%",
+        "on-scroll-down": "brightnessctl --device='kbd_backlight' set 5%-",
+        "tooltip": false
+    },
+
+    "image#album-art": {
+        "exec":"$XDG_CONFIG_HOME/waybar/custom/spotify/album_art.sh",
+        "size": 32,
+        "interval":30
     },
 
 
+    "wireplumber": {
+        "format": "{volume}% {icon}",
+        "format-muted": "",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "format-icons": ["", "", ""]
+    },
     "custom/clock": {
         "format": "<span color='#252525'>[ </span>{text}<span color='#252525'> ]</span>",
-        "exec": "date +'%H:%M %A, %b %d' | awk '{print tolower($0)}'",
+        "exec": "date +'%H:%M %A, %b %d'",
         "interval": 3
     },
 
+    "network": {
+        "interface": "wlp1s0f0",
+        "format": "{ifname}",
+        "format-wifi": "{essid} ",
+        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 10
+    },
     "battery": {
         "format": "<span color='#252525'> / </span><span color='#afa193'><b>bat:</b></span> {capacity}%",
         "format-charging": "<span color='#252525'> / </span><span color='#afa193'><b>ac:</b></span> {capacity}%",
-        "tooltip": false,
+        "tooltip": true,
         "interval": 20
     },
 
