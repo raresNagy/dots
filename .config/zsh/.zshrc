@@ -81,6 +81,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 alias ls='ls --color'
 alias vim='nvim'
 alias vi='nvim'
+alias cat="bat"
 
 # Shell integrations
 eval "$(fzf --zsh)"
@@ -109,3 +110,6 @@ export NVM_DIR="$HOME/.nvm"
 
 #cargo
 export PATH="$HOME/.cargo/bin:$PATH"
+
+## aliases
+
