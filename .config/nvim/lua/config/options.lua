@@ -40,3 +40,7 @@ vim.o.scrolloff = 10
 
 -- Disable commandline until it is needed
 vim.opt.cmdheight = 0
+
+-- Set time in milliseconds before CursorHold is triggered (default is 4000)
+-- This controls how long to wait before showing the LSP hover window
+vim.opt.updatetime = 2000

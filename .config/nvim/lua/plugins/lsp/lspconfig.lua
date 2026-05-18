@@ -16,15 +16,6 @@ return {
 		"mason-org/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 
-		-- C# LSP
-		{
-			"seblyng/roslyn.nvim",
-			commit = "82d0c9724c3f8eab7342a3a136782b4788070bd0",
-			lazy = false,
-			---@module 'roslyn.config'
-			---@type RoslynNvimConfig
-			ft = { "cs", "razor" },
-		},
 		{
 			"mrcjkb/rustaceanvim",
 			version = "^8", -- Recommended
@@ -61,6 +52,13 @@ return {
 				-- WARN: This is not Goto Definition, this is Goto Declaration.
 				--  For example, in C this would take you to the header.
 				map("grD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+
+				vim.api.nvim_create_autocmd("CursorHold", {
+					buffer = event.buf,
+					callback = function()
+						vim.lsp.buf.hover({ focusable = false })
+					end,
+				})
 			end,
 		})
 
@@ -72,21 +70,6 @@ return {
 			-- C/C++
 			clangd = {},
 
-			-- C#
-			roslyn = {
-				vim.filetype.add({
-					razor = "razor",
-					cshtml = "razor",
-				}),
-
-				filetypes = { "cs", "razor" },
-				settings = {
-					["csharp|background_analysis"] = {
-						dotnet_analyzer_diagnostics_scope = "openFiles", -- drastic improvement, timouts seem to go away
-						dotnet_compiler_diagnostics_scope = "openFiles",
-					},
-				},
-			},
 			-- HTML/Emmet
 			html = {},
 			emmet_language_server = {
@@ -179,5 +162,16 @@ return {
 			vim.lsp.config(name, server)
 			vim.lsp.enable(name)
 		end
+
+		vim.lsp.enable("roslyn_ls")
+		vim.lsp.config("roslyn_ls", {
+			filetypes = { "razor", "cs" },
+			settings = {
+				["csharp|background_analysis"] = {
+					dotnet_analyzer_diagnostics_scope = "openFiles",
+					dotnet_compiler_diagnostics_scope = "openFiles",
+				}
+			}
+		})
 	end,
 }

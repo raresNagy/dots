@@ -12,8 +12,13 @@ return {
 	{
 		"savq/melange-nvim",
 		name = "melange",
-		config = function()
-			vim.cmd([[colorscheme melange]])
-		end,
 	},
+	{
+	"rebelot/kanagawa.nvim",
+	compile = true;
+		config = function()
+			vim.cmd([[colorscheme kanagawa]])
+		end,
+
+	}
 }

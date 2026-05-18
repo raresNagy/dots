@@ -3,7 +3,8 @@ return {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {
 	sections = {
-	    lualine_x = {'filetype'}
+	    lualine_x = {'filetype', 'lsp_status'}
+
 	}
     }
 }
