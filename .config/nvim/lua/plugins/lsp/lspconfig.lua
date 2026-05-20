@@ -163,6 +163,7 @@ return {
 			vim.lsp.enable(name)
 		end
 
+		-- makes C# work
 		vim.lsp.enable("roslyn_ls")
 		vim.lsp.config("roslyn_ls", {
 			filetypes = { "razor", "cs" },

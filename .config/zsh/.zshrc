@@ -1,20 +1,10 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 if [ -f $(brew --prefix)/etc/brew-wrap ];then
   source $(brew --prefix)/etc/brew-wrap
 fi
 export PATH="/opt/homebrew:$PATH"
 
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  eval "$(oh-my-posh init zsh)"
-fi
-
 export GOPATH=$HOME/go
+
 export PATH=$GOPATH/bin:$PATH
 export EDITOR="nvim"
 
@@ -23,6 +13,9 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 export PATH="/bin:$PATH"
+
+# dotnet tools
+export PATH="$HOME/.dotnet/tools:$PATH"
 
 # Set zinit dir
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -34,16 +27,13 @@ if [ ! -d "$ZINIT_HOME" ]; then
 fi
 source "${ZINIT_HOME}/zinit.zsh"
 
-# Add in Powerlevel10k
-zinit ice depth=1; zinit light romkatv/powerlevel10k
-
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 
-# Add in sinppets
+# Add in snippets
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 
@@ -55,8 +45,6 @@ zinit cdreplay -q
 bindkey -v
 export KEYTIMEOUT=1
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # History
 HISTSIZE=10000
@@ -87,6 +75,9 @@ alias cat="bat"
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
+# dotnet completions
+eval "$(dotnet completions script zsh)"
+
 
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
@@ -111,5 +102,6 @@ export NVM_DIR="$HOME/.nvm"
 #cargo
 export PATH="$HOME/.cargo/bin:$PATH"
 
-## aliases
-
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  eval "$(oh-my-posh init zsh --config ~/.config/zsh/mytheme.omp.json)"
+fi

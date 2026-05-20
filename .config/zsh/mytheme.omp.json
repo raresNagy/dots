@@ -1,0 +1,87 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "upgrade": {
+    "source": "cdn",
+    "interval": "168h",
+    "auto": false,
+    "notice": false
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        
+        {
+          "options": {
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          "template": "<#5e81ac>[</>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}<#8fbcbb> \u25cf </>{{ end }}{{ if .Staging.Changed }}<#88c0d0> \u25cf </>{{ end }}<#5e81ac>]</>",
+          "foreground": "#b48ead",
+          "type": "git",
+          "style": "plain"
+        },
+        {
+          "template": "<#5e81ac>--[</>{{.Profile}}{{if .Region}}@{{.Region}}{{end}}<#5e81ac>]</>",
+          "foreground": "#b48ead",
+          "type": "aws",
+          "style": "plain"
+        },
+        {
+          "template": "<#5e81ac>--[</>{{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}}<#5e81ac>]</>",
+          "foreground": "#b48ead",
+          "type": "kubectl",
+          "style": "plain"
+        },
+        {
+          "template": "<#5e81ac>[</>\uf0e7<#5e81ac>]</>",
+          "foreground": "#d8dee9",
+          "type": "root",
+          "style": "plain"
+        },
+        {
+          "template": "<#5e81ac>[x</>{{ reason .Code }}<#5e81ac>]</>",
+          "foreground": "#d8dee9",
+          "type": "status",
+          "style": "plain"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "options": {
+            "style": "full"
+          },
+          "template": "<#5e81ac>[</>{{ .Path }}<#5e81ac>]</>",
+          "foreground": "#88c0d0",
+          "type": "path",
+          "style": "plain"
+        }
+      ],
+      "newline": true
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "template": "#",
+          "foreground": "#5e81ac",
+          "type": "text",
+          "style": "plain"
+        }
+      ],
+      "newline": true
+    }
+  ],
+  "transient_prompt" : {
+        "template": "> ",
+        "foreground": "#5e81ac"
+  },
+  "version": 4,
+  "final_space": true
+}
