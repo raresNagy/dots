@@ -111,6 +111,9 @@ return {
 				},
 			},
 
+			-- CMake
+			neocmakelsp = {},
+
 			-- rust
 			--
 			rust_analyzer = {},
@@ -154,6 +157,7 @@ return {
 			"stylua",
 			"isort",
 			"csharpier",
+			"neocmakelsp",
 		})
 
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })

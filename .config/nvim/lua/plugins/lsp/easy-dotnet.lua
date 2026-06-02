@@ -7,12 +7,6 @@ return {
 		"nvim-telescope/telescope.nvim",
 	},
 	config = function()
-		require("easy-dotnet").setup({
-			lsp = {
-				set_fold_expr = true,
-				suggest_updates = false, -- Periodically suggest roslyn-language-server updates
-			},
-			notifications = false,
-		})
+		require("easy-dotnet").setup()
 	end,
 }

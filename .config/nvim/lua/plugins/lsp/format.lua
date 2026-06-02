@@ -32,6 +32,7 @@ return {
 		-- Define your formatters
 		formatters_by_ft = {
 			cpp = { "clang_format" },
+			cmake = { "cmake_format" },
 			c_sharp = { "csharpier" },
 			lua = { "stylua" },
 			go = { "goimports", "golines", "gofmt" },
