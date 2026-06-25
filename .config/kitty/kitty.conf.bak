@@ -4,7 +4,10 @@
 #include themes/melange_dark.conf
 
 #: Fonts {{{
-
+# font_family      family='MonaspiceNe Nerd Font Mono' features='+calt +ital +liga +ordn +ss10 +ss01 -sinf -frac +ss02 +ss03 +ss04 +ss06 +ss07 +ss08 +ss09'
+# bold_font        family='MonaspiceNe Nerd Font Mono' style=Bold features='+calt +ital +liga +ordn +ss10 +ss01 -sinf -frac +ss02 +ss03 +ss04 +ss06 +ss07 +ss08 +ss09'
+# italic_font      family='MonaspiceNe Nerd Font Mono' features='+calt +ital +liga +ordn +ss10 +ss01 -sinf -frac +ss02 +ss03 +ss04 +ss06 +ss07 +ss08 +ss09'
+# bold_italic_font family='MonaspiceNe Nerd Font Mono' style='Bold Italic' features='+calt +ital +liga +ordn +ss10 +ss01 -sinf -frac +ss02 +ss03 +ss04 +ss06 +ss07 +ss08 +ss09'
 #: kitty has very powerful font management. You can configure
 #: individual font faces and even specify special fonts for particular
 #: characters.
@@ -26,7 +29,7 @@
 #: <https://sw.kovidgoyal.net/kitty/kittens/choose-fonts/#font-spec-
 #: syntax>.
 
-font_size 12
+font_size 13
 
 #: Font size (in pts).
 
@@ -2097,8 +2100,7 @@ shell_integration enabled
 #: means to use the default system colors, a value of background means
 #: to use the background color of the currently active kitty window
 #: and finally you can use an arbitrary color, such as #12af59 or red.
-
-macos_titlebar_color background
+# macos_titlebar_color background
 
 #: The color of the kitty window's titlebar on macOS. A value of
 #: system means to use the default system color, light or dark can
@@ -2147,7 +2149,7 @@ macos_quit_when_last_window_closed yes
 #: this option is obsolete (although still supported). Consider using
 #: text_composition_strategy instead.
 
-macos_traditional_fullscreen yes
+macos_traditional_fullscreen no
 
 #: Use the macOS traditional full-screen transition, that is faster,
 #: but less pretty.
@@ -2999,11 +3001,16 @@ macos_traditional_fullscreen yes
 
 #: }}}
 
+# BEGIN_KITTY_THEME
+# Kanagawa
+include current-theme.conf
+# END_KITTY_THEME
+
 
 
 # BEGIN_KITTY_FONTS
-font_family      family="Maple Mono NF"
-bold_font        family='Maple Mono NF' style=Bold
+font_family      family='Maple Mono NF' features='+ss11 -subs +ss10 +ss09 +ss08 +ss07'
+bold_font        family='Maple Mono NF' style=Bold features='+ss11 -subs +ss10 +ss09 +ss08 +ss07'
 italic_font      auto
-bold_italic_font family='Maple Mono NF' style='Bold Italic'
+bold_italic_font family='Maple Mono NF' style='Bold Italic' features='+ss11 -subs +ss10 +ss09 +ss08 +ss07'
 # END_KITTY_FONTS

@@ -3,5 +3,7 @@
   "plugin": [
     "caveman",
     "caveman-opencode-plugin@latest"
-  ]
+  ],
+  "lsp": true
+ // "env": { "OPENCODE_DISABLE_LSP_DOWNLOAD": true}
 }

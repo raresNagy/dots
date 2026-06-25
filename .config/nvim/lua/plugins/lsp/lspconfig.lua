@@ -99,6 +99,15 @@ return {
 			dockerls = {},
 			yamlls = {},
 
+			--Kotlin
+			kotlin_language_server = {
+				filetypes = {
+					"kotlin",
+				},
+				env = {
+					JAVA_HOME = "/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home",
+				},
+			},
 			-- Go
 			gopls = {
 				settings = {
