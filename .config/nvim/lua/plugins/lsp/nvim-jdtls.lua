@@ -5,6 +5,5 @@ return {
 		"neovim/nvim-lspconfig",
 	},
 	vim.lsp.enable("jdtls"),
-	require("mason-tool-installer").setup(
-		{ ensure_installed = {{ "jdtls" },} }),
+	require("mason-tool-installer").setup({ ensure_installed = { { "jdtls" } } }),
 }
