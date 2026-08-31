@@ -3009,8 +3009,8 @@ include current-theme.conf
 
 
 # BEGIN_KITTY_FONTS
-font_family      family='Maple Mono NF' features='+ss11 -subs +ss10 +ss09 +ss08 +ss07'
-bold_font        family='Maple Mono NF' style=Bold features='+ss11 -subs +ss10 +ss09 +ss08 +ss07'
+font_family      family='Maple Mono Normal NF' features='cv01=0 cv03=0 cv61=0 cv62=0 cv63=1 cv64=1 cv65=1'
+bold_font        family='Maple Mono Normal NF' postscript_name=MapleMonoNormal-NF-Bold
 italic_font      auto
-bold_italic_font family='Maple Mono NF' style='Bold Italic' features='+ss11 -subs +ss10 +ss09 +ss08 +ss07'
+bold_italic_font family='Maple Mono Normal NF' postscript_name=MapleMonoNormal-NF-BoldItalic features='-cv01 -cv03 -cv09 -cv10 -cv61 -cv62'
 # END_KITTY_FONTS

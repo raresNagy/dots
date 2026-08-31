@@ -2,6 +2,7 @@ if [ -f $(brew --prefix)/etc/brew-wrap ];then
   source $(brew --prefix)/etc/brew-wrap
 fi
 export PATH="/opt/homebrew:$PATH"
+export HOMEBREW_NO_ENV_HINTS=1
 
 export GOPATH=$HOME/go
 
