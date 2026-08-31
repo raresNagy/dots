@@ -49,7 +49,7 @@ return {
 		bigfile = { enabled = true },
 		input = { enabled = true },
 		picker = { enabled = true },
-		notifier = { enabled = true },
+		 -- notifier = { enabled = true },
 		quickfile = { enabled = true },
 		scope = { enabled = true },
 		scroll = { enabled = true },

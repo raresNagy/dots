@@ -124,7 +124,6 @@ return {
 			neocmakelsp = {},
 
 			-- rust
-			--
 			rust_analyzer = {},
 
 			-- Lua
