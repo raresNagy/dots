@@ -2,7 +2,7 @@ return {
 	"nvim-mini/mini.nvim",
 	version = false,
 	config = function()
-		require("mini.ai").setup()
+ 		require("mini.ai").setup()
 		require("mini.pairs").setup()
 		require("mini.splitjoin").setup()
 		require("mini.surround").setup()
@@ -11,6 +11,9 @@ return {
 		require("mini.tabline").setup()
 		require("mini.comment").setup()
 		require("mini.notify").setup()
+		require('mini.pick').setup()
+		require("mini.clue").setup()
+		require('mini.statuscolumn').setup()
 		require("mini.indentscope").setup({
 			draw = {
 				delay = 10,
