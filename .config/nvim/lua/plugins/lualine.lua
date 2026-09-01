@@ -1,10 +1,5 @@
 return {
     "nvim-lualine/lualine.nvim",
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    opts = {
-	sections = {
-	    lualine_x = {'filetype', 'lsp_status'}
-
-	}
-    }
+    opts = require("config.lualineconfig"),
 }
