@@ -21,8 +21,6 @@ return {
 			version = "^8", -- Recommended
 			lazy = false, -- This plugin is already lazy
 		},
-		-- Useful status updates for LSP.
-		{ "j-hui/fidget.nvim", opts = {} },
 		{
 			"folke/lazydev.nvim",
 			ft = "lua",

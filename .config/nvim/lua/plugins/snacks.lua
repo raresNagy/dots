@@ -51,7 +51,6 @@ return {
 		quickfile = { enabled = true },
 		scope = { enabled = true },
 		scroll = { enabled = true },
-		terminal = { enabled = true },
 		words = { enabled = true },
 		explorer = { enabled = true },
 	},

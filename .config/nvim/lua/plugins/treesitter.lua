@@ -12,6 +12,7 @@ return {
 			"razor",
 			"html",
 			"css",
+			"java",
 			"javascript",
 			"python",
 		},
