@@ -3,6 +3,13 @@ return {
 	version = false,
 	config = function()
 		require("mini.ai").setup()
+		require("mini.files").setup({
+			vim.keymap.set("n", "<leader>e", "<CMD>lua MiniFiles.open()<CR>", {desc = "Open parent directory"}),
+			options = {
+				-- Whether to delete permanently or move into module-specific trash
+				permanent_delete = false,
+			}
+		})
 		require("mini.pairs").setup()
 		require("mini.splitjoin").setup()
 		require("mini.surround").setup()
@@ -14,8 +21,12 @@ return {
 		notify.setup({
 			sort = function(notif_arr)
 				local filtered = vim.tbl_filter(function(notif)
-					local is_lsp = notif.data and string.find(notif.msg, "jdtls") 
-					return is_lsp == false
+					local silenced = notif.data and (
+									 string.find(notif.msg, "jdtls") or
+									 string.find(notif.msg, "hover") or
+									 string.find(notif.msg, "No information available")
+								 )
+					return !silenced
 				end, notif_arr)
 				return notify.default_sort(filtered)
 			end,

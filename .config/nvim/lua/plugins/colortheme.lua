@@ -34,7 +34,6 @@ return {
 		config = function()
 			vim.opt.termguicolors = true
 		    vim.g.zenbones_darken_comments = 45
-			vim.g.zenbones_compat = 1
 			vim.opt.background = "dark"
 		    vim.cmd.colorscheme('zenbones')
 		end

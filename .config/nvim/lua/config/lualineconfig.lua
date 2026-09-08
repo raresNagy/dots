@@ -2,20 +2,20 @@
 -- Author: shadmansaleh
 -- Credit: glepnir
 
--- Color table for highlights
+-- Color table for highlights sourced from the active zenbones palette
 -- stylua: ignore
+local palette = require("zenbones.palette")[vim.o.background]
 local colors = {
-  bg       = '#202328',
-  fg       = '#bbc2cf',
-  yellow   = '#ECBE7B',
-  cyan     = '#008080',
-  darkblue = '#081633',
-  green    = '#98be65',
-  orange   = '#FF8800',
-  violet   = '#a9a1e1',
-  magenta  = '#c678dd',
-  blue     = '#51afef',
-  red      = '#ec5f67',
+  bg      = tostring(palette.bg),
+  fg      = tostring(palette.fg),
+  yellow  = tostring(palette.wood),
+  cyan    = tostring(palette.sky),
+  green   = tostring(palette.leaf),
+  orange  = tostring(palette.wood),
+  violet  = tostring(palette.blossom),
+  magenta = tostring(palette.blossom1),
+  blue    = tostring(palette.water),
+  red     = tostring(palette.rose),
 }
 
 local conditions = {
@@ -172,7 +172,7 @@ ins_left({
 		return msg
 	end,
 	icon = " LSP:",
-	color = { fg = "#ffffff", gui = "bold" },
+	color = { fg = colors.fg, gui = "bold" },
 })
 
 -- Add components to right sections

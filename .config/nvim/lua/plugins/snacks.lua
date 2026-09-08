@@ -3,22 +3,6 @@ return {
 	priority = 1000,
 	lazy = false,
 
-	keys = {
-		{
-			"<leader>e",
-			function()
-				Snacks.explorer.open()
-			end,
-			desc = "Open file explorer",
-		},
-		{
-			"<leader>h",
-			function()
-				Snacks.terminal.toggle()
-			end,
-			desc = "Toggle terminal",
-		},
-	},
 	---@type snacks.Config
 	opts = {
 		-- your configuration comes here
@@ -52,6 +36,5 @@ return {
 		scope = { enabled = true },
 		scroll = { enabled = true },
 		words = { enabled = true },
-		explorer = { enabled = true },
 	},
 }
