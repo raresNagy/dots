@@ -93,6 +93,8 @@ return {
 			-- Python
 			pyright = {},
 
+			-- JS and Typescript
+			ts_ls = {},
 			--docker
 			dockerls = {},
 			yamlls = {},

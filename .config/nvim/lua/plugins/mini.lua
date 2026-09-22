@@ -13,7 +13,6 @@ return {
 		require("mini.pairs").setup()
 		require("mini.splitjoin").setup()
 		require("mini.surround").setup()
-		require("mini.cmdline").setup()
 		require("mini.icons").setup()
 		require("mini.tabline").setup()
 		require("mini.comment").setup()
@@ -42,7 +41,6 @@ return {
 			},
 		})
 		require("mini.pick").setup()
-		require("mini.clue").setup()
 		require("mini.statuscolumn").setup()
 		require("mini.indentscope").setup({
 			draw = {

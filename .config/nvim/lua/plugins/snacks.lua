@@ -33,8 +33,7 @@ return {
 		bigfile = { enabled = true },
 		input = { enabled = true },
 		quickfile = { enabled = true },
-		scope = { enabled = true },
-		scroll = { enabled = true },
+		-- scroll = { enabled = true },
 		words = { enabled = true },
 	},
 }

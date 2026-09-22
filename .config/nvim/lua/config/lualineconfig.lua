@@ -6,16 +6,16 @@
 -- stylua: ignore
 local palette = require("zenbones.palette")[vim.o.background]
 local colors = {
-  bg      = tostring(palette.bg),
-  fg      = tostring(palette.fg),
-  yellow  = tostring(palette.wood),
-  cyan    = tostring(palette.sky),
-  green   = tostring(palette.leaf),
-  orange  = tostring(palette.wood),
-  violet  = tostring(palette.blossom),
-  magenta = tostring(palette.blossom1),
-  blue    = tostring(palette.water),
-  red     = tostring(palette.rose),
+	bg = tostring(palette.bg),
+	fg = tostring(palette.fg),
+	yellow = tostring(palette.wood),
+	cyan = tostring(palette.sky),
+	green = tostring(palette.leaf),
+	orange = tostring(palette.wood),
+	violet = tostring(palette.blossom),
+	magenta = tostring(palette.blossom1),
+	blue = tostring(palette.water),
+	red = tostring(palette.rose),
 }
 
 local conditions = {
@@ -154,7 +154,8 @@ ins_left({
 	end,
 })
 
-ins_left({
+-- Add components to right sections
+ins_right({
 	-- Lsp server name .
 	function()
 		local msg = "No Active Lsp"
@@ -174,22 +175,6 @@ ins_left({
 	icon = " LSP:",
 	color = { fg = colors.fg, gui = "bold" },
 })
-
--- Add components to right sections
-ins_right({
-	"o:encoding", -- option component same as &encoding in viml
-	fmt = string.upper, -- I'm not sure why it's upper case either ;)
-	cond = conditions.hide_in_width,
-	color = { fg = colors.green, gui = "bold" },
-})
-
-ins_right({
-	"fileformat",
-	fmt = string.upper,
-	icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-	color = { fg = colors.green, gui = "bold" },
-})
-
 ins_right({
 	"branch",
 	icon = "",
