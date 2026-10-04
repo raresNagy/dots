@@ -26,6 +26,13 @@ return {
 				cshtml = "razor",
 			},
 		})
+
+		vim.api.nvim_create_autocmd("ColorScheme", {
+			callback = function()
+				vim.api.nvim_set_hl(0, "@lsp.type.modifier.java", { link = "@keyword.modifier" })
+			end,
+		}, vim.api.nvim_set_hl(0, "@lsp.type.modifier.java", { link = "@keyword.modifier" }))
+
 		vim.treesitter.language.register("razor", "razor")
 		vim.api.nvim_create_autocmd("FileType", {
 			pattern = "razor",

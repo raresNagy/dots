@@ -10,6 +10,7 @@ vim.opt.smarttab = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 vim.opt.relativenumber = true
+vim.opt.termguicolors = true
 
 vim.opt.clipboard:append("unnamedplus")
 
@@ -28,6 +29,7 @@ vim.opt.cursorline = true
 
 vim.opt.list = true
 vim.opt.listchars:append("trail:·")
+vim.opt.listchars:append("tab:  ")
 
 vim.opt.mouse = "a"
 

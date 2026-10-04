@@ -1,5 +1,48 @@
 return {
 	{
+		"zaldih/themery.nvim",
+		lazy = false,
+		config = function()
+			require("themery").setup({
+				themes = {
+					{ name = "Moonfly", colorscheme = "moonfly" },
+					{ name = "Melange", colorscheme = "melange" },
+					{ name = "Kanagawa Wave", colorscheme = "kanagawa-wave" },
+					{ name = "Kanagawa Dragon", colorscheme = "kanagawa-dragon" },
+					{ name = "Kanagawa Lotus", colorscheme = "kanagawa-lotus" },
+					{ name = "Gruvbox", colorscheme = "gruvbox" },
+					{ name = "Zenbones", colorscheme = "zenbones" },
+					{ name = "Zenwritten", colorscheme = "zenwritten" },
+					{ name = "Zenburned", colorscheme = "zenburned" },
+					{ name = "Duckbones", colorscheme = "duckbones" },
+					{ name = "Neobones", colorscheme = "neobones" },
+					{ name = "Nordbones", colorscheme = "nordbones" },
+					{ name = "Rosebones", colorscheme = "rosebones" },
+					{ name = "Seoulbones", colorscheme = "seoulbones" },
+					{ name = "Tokyobones", colorscheme = "tokyobones" },
+					{ name = "Vimbones", colorscheme = "vimbones" },
+					{ name = "Forestbones", colorscheme = "forestbones" },
+					{ name = "Kanagawabones", colorscheme = "kanagawabones" },
+					{ name = "Randombones", colorscheme = "randombones" },
+					{ name = "Randombones Dark", colorscheme = "randombones_dark" },
+					{ name = "Randombones Light", colorscheme = "randombones_light" },
+				},
+			})
+		end,
+	},
+
+	{
+		"gruvbox-community/gruvbox",
+		config = function()
+			vim.g.gruvbox_italic = 1
+			vim.g.gruvbox_transparent_bg = 1
+			vim.g.gruvbox_italicize_strings = 1
+
+			vim.g.gruvbox_contrast_dark = "medium"
+		end,
+	},
+
+	{
 		"bluz71/vim-moonfly-colors",
 		name = "moonfly",
 		lazy = false,
@@ -33,9 +76,9 @@ return {
 		-- you can set set configuration options here
 		config = function()
 			vim.opt.termguicolors = true
-		    vim.g.zenbones_darken_comments = 45
+			vim.g.zenbones_darken_comments = 45
 			vim.opt.background = "dark"
-		    vim.cmd.colorscheme('zenbones')
-		end
+			vim.cmd.colorscheme("zenbones")
+		end,
 	},
 }
