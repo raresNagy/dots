@@ -1,0 +1,41 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Rares Nagy
+	email = rares.nagy@gmail.com
+
+[core]
+  compression = 9
+  whitespace = error
+  preloadindex = true
+
+
+[commit]
+	template = ~/.config/git/template
+	verbose = true  # add more context to commit messages
+
+[log]
+    abbrevCommit = true  # short commits
+    graphColors  = blue,yellow,cyan,magenta,green,red
+
+[pull]
+	default = current
+	rebase = true
+
+[rebase]
+	autoStash = true
+	missingCommitsCheck = warn
+
+[push]
+	autoSetupRemote = true
+	default = current
+	followTags = true
+
+[status]
+	branch = true
+	short = true
+	showStash = true
+	
+[interactive]
+	diffFilter = diff-so-fancy --patch
+	singlekey = true
+
