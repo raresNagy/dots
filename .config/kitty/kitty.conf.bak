@@ -1,7 +1,5 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
-#include themes/moonfly.conf
-#include themes/melange_dark.conf
 
 #: Fonts {{{
 # font_family      family='MonaspiceNe Nerd Font Mono' features='+calt +ital +liga +ordn +ss10 +ss01 -sinf -frac +ss02 +ss03 +ss04 +ss06 +ss07 +ss08 +ss09'
@@ -29,7 +27,7 @@
 #: <https://sw.kovidgoyal.net/kitty/kittens/choose-fonts/#font-spec-
 #: syntax>.
 
-font_size 13
+font_size 14
 
 #: Font size (in pts).
 
@@ -1172,7 +1170,7 @@ copy_on_select clipboard
 #: Fade the text in inactive windows by the specified amount (a number
 #: between zero and one, with zero being fully faded).
 
-# hide_window_decorations no
+hide_window_decorations yes
 
 #: Hide the window decorations (title-bar and window borders) with
 #: yes. On macOS, titlebar-only and titlebar-and-corners can be used
@@ -1473,7 +1471,7 @@ copy_on_select clipboard
 
 #: The foreground and background colors.
 
-# background_opacity 1 
+background_opacity 0.9
 
 #: The opacity of the terminal background color. A number between zero
 #: and one, where one is opaque and zero is fully transparent. This
@@ -3001,16 +2999,15 @@ macos_traditional_fullscreen no
 
 #: }}}
 
+# BEGIN_KITTY_FONTS
+font_family      family='Iosevka Nerd Font Mono' features=+ss08
+bold_font        family='Iosevka Nerd Font Mono' postscript_name=IosevkaNFM-Bold
+italic_font      family='Iosevka Nerd Font Mono' postscript_name=IosevkaNFM-Italic
+bold_italic_font family='Iosevka Nerd Font Mono' postscript_name=IosevkaNFM-BoldItalic
+# END_KITTY_FONTS
+
+
 # BEGIN_KITTY_THEME
-# Kanagawa
+# Base2Tone Garden Dark
 include current-theme.conf
 # END_KITTY_THEME
-
-
-
-# BEGIN_KITTY_FONTS
-font_family      family='Maple Mono Normal NF' features='cv01=0 cv03=0 cv61=0 cv62=0 cv63=1 cv64=1 cv65=1'
-bold_font        family='Maple Mono Normal NF' postscript_name=MapleMonoNormal-NF-Bold
-italic_font      auto
-bold_italic_font family='Maple Mono Normal NF' postscript_name=MapleMonoNormal-NF-BoldItalic features='-cv01 -cv03 -cv09 -cv10 -cv61 -cv62'
-# END_KITTY_FONTS

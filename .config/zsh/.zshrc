@@ -2,6 +2,7 @@ if [ -f $(brew --prefix)/etc/brew-wrap ];then
   source $(brew --prefix)/etc/brew-wrap
 fi
 export PATH="/opt/homebrew:$PATH"
+source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh # Or run `brew info chruby` to find out installed directory
 export HOMEBREW_NO_ENV_HINTS=1
 
 export GOPATH=$HOME/go
@@ -71,8 +72,6 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias ls='ls --color'
-alias vim='nvim'
-alias vi='nvim'
 #alias cat="bat"
 
 # Shell integrations
