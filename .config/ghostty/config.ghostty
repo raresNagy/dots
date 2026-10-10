@@ -1,0 +1,14 @@
+font-family = Monaspace Argon NF
+font-feature = +liga, +ss01, +ss02, +ss03, +ss04, +ss06, +ss07, +ss09, cv01=2, 
+font-size = 14
+
+theme = Gruvbox Dark Hard
+background-opacity = 0.9
+
+custom-shader = ./shaders/cursor-shaders/ghostty/cursor_warp.glsl
+
+macos-option-as-alt = true
+
+link-previews = true
+title = ""
+window-decoration = none

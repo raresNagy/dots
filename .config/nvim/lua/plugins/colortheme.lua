@@ -38,7 +38,7 @@ return {
 			vim.g.gruvbox_transparent_bg = 1
 			vim.g.gruvbox_italicize_strings = 1
 
-			vim.g.gruvbox_contrast_dark = "medium"
+			vim.g.gruvbox_contrast_dark = "hard"
 		end,
 	},
 

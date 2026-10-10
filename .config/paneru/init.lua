@@ -47,7 +47,6 @@ paneru.setup({
 	restore = { enabled = true, startup_grace_ms = 2000 },
 
 	windows = {
-
 		firefox_pip = {
 			bundle_id = "org.mozilla.firefox",
 			title = "^Picture-in-Picture$",
