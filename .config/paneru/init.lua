@@ -31,7 +31,7 @@ paneru.setup({
 		preset_column_widths = { 0.33333, 0.5, 0.66667 }, -- niri 1/3, 1/2, 2/3
 		preset_stack_heights = { 0.33333, 0.5, 0.66667 }, -- niri 1/3, 1/2, 2/3
 
-		animation_speed = 24.0, -- niri keeps animations on
+		animation_speed = 48.0, -- niri keeps animations on
 	},
 
 	swipe = {
@@ -48,7 +48,7 @@ paneru.setup({
 
 	windows = {
 		firefox_pip = {
-			bundle_id = "org.mozilla.firefox",
+			bundle_id = "net.librewolf.librewolf",
 			title = "^Picture-in-Picture$",
 			floating = true,
 		},
