@@ -25,8 +25,11 @@ paneru.setup({
 		-- kept paneru's macOS-friendly ON.
 		focus_follows_mouse = true,
 		mouse_follows_focus = true,
+		menubar_height = 0,
 
 		auto_center = false, -- niri: center-focused-column "never"
+
+		horizontal_padding = 8,
 
 		preset_column_widths = { 0.33333, 0.5, 0.66667 }, -- niri 1/3, 1/2, 2/3
 		preset_stack_heights = { 0.33333, 0.5, 0.66667 }, -- niri 1/3, 1/2, 2/3
@@ -36,7 +39,7 @@ paneru.setup({
 
 	swipe = {
 		sensitivity = 0.4,
-		continuous = false;
+		continuous = false,
 		gesture = {
 			fingers_count = 3,
 		},
