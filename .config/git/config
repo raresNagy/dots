@@ -9,7 +9,7 @@
   preloadindex = true
 
 [branch]
-	sort = -commiterdate
+	; sort = -commiterdate
 [tag]
 	sort = -taggerdate
 
