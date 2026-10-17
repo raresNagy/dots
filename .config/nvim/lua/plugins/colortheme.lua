@@ -11,6 +11,7 @@ return {
 					{ name = "Kanagawa Dragon", colorscheme = "kanagawa-dragon" },
 					{ name = "Kanagawa Lotus", colorscheme = "kanagawa-lotus" },
 					{ name = "Gruvbox", colorscheme = "gruvbox" },
+					{ name = "Gruber Darker", colorscheme = "gruber-darker" },
 					{ name = "Zenbones", colorscheme = "zenbones" },
 					{ name = "Zenwritten", colorscheme = "zenwritten" },
 					{ name = "Zenburned", colorscheme = "zenburned" },
@@ -30,7 +31,7 @@ return {
 			})
 		end,
 	},
-
+	{ "blazkowolf/gruber-darker.nvim" },
 	{
 		"gruvbox-community/gruvbox",
 		config = function()

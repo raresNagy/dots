@@ -1,3 +1,4 @@
+vim.loader.enable()
 vim.opt.ignorecase = true
 vim.o.smartcase = true
 
@@ -30,6 +31,7 @@ vim.opt.cursorline = true
 vim.opt.list = true
 vim.opt.listchars:append("trail:·")
 vim.opt.listchars:append("tab:  ")
+vim.opt.listchars:append("nbsp:␣")
 
 vim.opt.mouse = "a"
 

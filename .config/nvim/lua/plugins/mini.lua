@@ -13,7 +13,10 @@ return {
 		require("mini.pairs").setup()
 		require("mini.splitjoin").setup()
 		require("mini.surround").setup()
-		require("mini.icons").setup()
+		if vim.g.have_nerd_fonr then
+			require("mini.icons").setup()
+			MiniIcons.mock_nvim_web_devicons()
+		end
 		require("mini.tabline").setup()
 		require("mini.comment").setup()
 		local notify = require("mini.notify")
